@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"pushover-notifications",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "pushover-notifications",
+    "description": "api documentation for [pushover-notifications (v0.2.4)](http://github.com/qbit/node-pushover) [![npm package](https://img.shields.io/npm/v/npmdoc-pushover-notifications.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-pushover-notifications) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-pushover-notifications.svg)](https://travis-ci.org/npmdoc/node-npmdoc-pushover-notifications)",
     "devDependencies": {
-        "pushover-notifications": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "pushover-notifications": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-pushover-notifications",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-pushover-notifications",
+    "keywords": [
+        "documentation",
+        "pushover-notifications"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_pushover_notifications.js",
+    "name": "npmdoc-pushover-notifications",
+    "nameAlias": "npmdoc_pushover_notifications",
+    "nameOriginal": "npmdoc-pushover-notifications",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-pushover-notifications"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
