@@ -61,12 +61,432 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.pushover-notifications">module pushover-notifications</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pushover-notifications.pushover-notifications">
+            function <span class="apidocSignatureSpan"></span>pushover-notifications
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pushover-notifications.pushover">
+            function <span class="apidocSignatureSpan">pushover-notifications.</span>pushover
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pushover-notifications.</span>pushover.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pushover-notifications.pushover">module pushover-notifications.pushover</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pushover-notifications.pushover.pushover">
+            function <span class="apidocSignatureSpan">pushover-notifications.</span>pushover
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.pushover-notifications.pushover.prototype">module pushover-notifications.pushover.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pushover-notifications.pushover.prototype.errors">
+            function <span class="apidocSignatureSpan">pushover-notifications.pushover.prototype.</span>errors
+            <span class="apidocSignatureSpan">(d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pushover-notifications.pushover.prototype.send">
+            function <span class="apidocSignatureSpan">pushover-notifications.pushover.prototype.</span>send
+            <span class="apidocSignatureSpan">(obj, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.pushover-notifications.pushover.prototype.updateSounds">
+            function <span class="apidocSignatureSpan">pushover-notifications.pushover.prototype.</span>updateSounds
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.pushover-notifications" id="apidoc.module.pushover-notifications">module pushover-notifications</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pushover-notifications.pushover-notifications" id="apidoc.element.pushover-notifications.pushover-notifications">
+        function <span class="apidocSignatureSpan"></span>pushover-notifications
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Pushover(opts) {
+    var self = this;
+    this.token = opts.token;
+    this.user = opts.user;
+    this.httpOptions = opts.httpOptions;
+    this.sounds = {
+	&#x22;pushover&#x22;:&#x22;Pushover (default)&#x22;,
+	&#x22;bike&#x22;:&#x22;Bike&#x22;,
+	&#x22;bugle&#x22;:&#x22;Bugle&#x22;,
+	&#x22;cashregister&#x22;:&#x22;Cash Register&#x22;,
+	&#x22;classical&#x22;:&#x22;Classical&#x22;,
+	&#x22;cosmic&#x22;:&#x22;Cosmic&#x22;,
+	&#x22;falling&#x22;:&#x22;Falling&#x22;,
+	&#x22;gamelan&#x22;:&#x22;Gamelan&#x22;,
+	&#x22;incoming&#x22;:&#x22;Incoming&#x22;,
+	&#x22;intermission&#x22;:&#x22;Intermission&#x22;,
+	&#x22;magic&#x22;:&#x22;Magic&#x22;,
+	&#x22;mechanical&#x22;:&#x22;Mechanical&#x22;,
+	&#x22;pianobar&#x22;:&#x22;Piano Bar&#x22;,
+	&#x22;siren&#x22;:&#x22;Siren&#x22;,
+	&#x22;spacealarm&#x22;:&#x22;Space Alarm&#x22;,
+	&#x22;tugboat&#x22;:&#x22;Tug Boat&#x22;,
+	&#x22;alien&#x22;:&#x22;Alien Alarm (long)&#x22;,
+	&#x22;climb&#x22;:&#x22;Climb (long)&#x22;,
+	&#x22;persistent&#x22;:&#x22;Persistent (long)&#x22;,
+	&#x22;echo&#x22;:&#x22;Pushover Echo (long)&#x22;,
+	&#x22;updown&#x22;:&#x22;Up Down (long)&#x22;,
+	&#x22;none&#x22;:&#x22;None (silent)&#x22;
+    };
+
+    if (opts.debug) {
+	this.debug = opts.debug;
+    }
+
+    if (opts.onerror) {
+	this.onerror = opts.onerror;
+    }
+
+    if (opts.update_sounds) {
+	self.updateSounds();
+	setInterval(function() {
+	    self.updateSounds();
+	}, 86400000);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pushover-notifications.pushover" id="apidoc.element.pushover-notifications.pushover">
+        function <span class="apidocSignatureSpan">pushover-notifications.</span>pushover
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Pushover(opts) {
+    var self = this;
+    this.token = opts.token;
+    this.user = opts.user;
+    this.httpOptions = opts.httpOptions;
+    this.sounds = {
+	&#x22;pushover&#x22;:&#x22;Pushover (default)&#x22;,
+	&#x22;bike&#x22;:&#x22;Bike&#x22;,
+	&#x22;bugle&#x22;:&#x22;Bugle&#x22;,
+	&#x22;cashregister&#x22;:&#x22;Cash Register&#x22;,
+	&#x22;classical&#x22;:&#x22;Classical&#x22;,
+	&#x22;cosmic&#x22;:&#x22;Cosmic&#x22;,
+	&#x22;falling&#x22;:&#x22;Falling&#x22;,
+	&#x22;gamelan&#x22;:&#x22;Gamelan&#x22;,
+	&#x22;incoming&#x22;:&#x22;Incoming&#x22;,
+	&#x22;intermission&#x22;:&#x22;Intermission&#x22;,
+	&#x22;magic&#x22;:&#x22;Magic&#x22;,
+	&#x22;mechanical&#x22;:&#x22;Mechanical&#x22;,
+	&#x22;pianobar&#x22;:&#x22;Piano Bar&#x22;,
+	&#x22;siren&#x22;:&#x22;Siren&#x22;,
+	&#x22;spacealarm&#x22;:&#x22;Space Alarm&#x22;,
+	&#x22;tugboat&#x22;:&#x22;Tug Boat&#x22;,
+	&#x22;alien&#x22;:&#x22;Alien Alarm (long)&#x22;,
+	&#x22;climb&#x22;:&#x22;Climb (long)&#x22;,
+	&#x22;persistent&#x22;:&#x22;Persistent (long)&#x22;,
+	&#x22;echo&#x22;:&#x22;Pushover Echo (long)&#x22;,
+	&#x22;updown&#x22;:&#x22;Up Down (long)&#x22;,
+	&#x22;none&#x22;:&#x22;None (silent)&#x22;
+    };
+
+    if (opts.debug) {
+	this.debug = opts.debug;
+    }
+
+    if (opts.onerror) {
+	this.onerror = opts.onerror;
+    }
+
+    if (opts.update_sounds) {
+	self.updateSounds();
+	setInterval(function() {
+	    self.updateSounds();
+	}, 86400000);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pushover-notifications.pushover" id="apidoc.module.pushover-notifications.pushover">module pushover-notifications.pushover</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pushover-notifications.pushover.pushover" id="apidoc.element.pushover-notifications.pushover.pushover">
+        function <span class="apidocSignatureSpan">pushover-notifications.</span>pushover
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Pushover(opts) {
+    var self = this;
+    this.token = opts.token;
+    this.user = opts.user;
+    this.httpOptions = opts.httpOptions;
+    this.sounds = {
+	&#x22;pushover&#x22;:&#x22;Pushover (default)&#x22;,
+	&#x22;bike&#x22;:&#x22;Bike&#x22;,
+	&#x22;bugle&#x22;:&#x22;Bugle&#x22;,
+	&#x22;cashregister&#x22;:&#x22;Cash Register&#x22;,
+	&#x22;classical&#x22;:&#x22;Classical&#x22;,
+	&#x22;cosmic&#x22;:&#x22;Cosmic&#x22;,
+	&#x22;falling&#x22;:&#x22;Falling&#x22;,
+	&#x22;gamelan&#x22;:&#x22;Gamelan&#x22;,
+	&#x22;incoming&#x22;:&#x22;Incoming&#x22;,
+	&#x22;intermission&#x22;:&#x22;Intermission&#x22;,
+	&#x22;magic&#x22;:&#x22;Magic&#x22;,
+	&#x22;mechanical&#x22;:&#x22;Mechanical&#x22;,
+	&#x22;pianobar&#x22;:&#x22;Piano Bar&#x22;,
+	&#x22;siren&#x22;:&#x22;Siren&#x22;,
+	&#x22;spacealarm&#x22;:&#x22;Space Alarm&#x22;,
+	&#x22;tugboat&#x22;:&#x22;Tug Boat&#x22;,
+	&#x22;alien&#x22;:&#x22;Alien Alarm (long)&#x22;,
+	&#x22;climb&#x22;:&#x22;Climb (long)&#x22;,
+	&#x22;persistent&#x22;:&#x22;Persistent (long)&#x22;,
+	&#x22;echo&#x22;:&#x22;Pushover Echo (long)&#x22;,
+	&#x22;updown&#x22;:&#x22;Up Down (long)&#x22;,
+	&#x22;none&#x22;:&#x22;None (silent)&#x22;
+    };
+
+    if (opts.debug) {
+	this.debug = opts.debug;
+    }
+
+    if (opts.onerror) {
+	this.onerror = opts.onerror;
+    }
+
+    if (opts.update_sounds) {
+	self.updateSounds();
+	setInterval(function() {
+	    self.updateSounds();
+	}, 86400000);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.pushover-notifications.pushover.prototype" id="apidoc.module.pushover-notifications.pushover.prototype">module pushover-notifications.pushover.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.pushover-notifications.pushover.prototype.errors" id="apidoc.element.pushover-notifications.pushover.prototype.errors">
+        function <span class="apidocSignatureSpan">pushover-notifications.pushover.prototype.</span>errors
+        <span class="apidocSignatureSpan">(d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function (d) {
+    if (typeof d === &#x27;string&#x27;) {
+	d = JSON.parse(d);
+    }
+
+    if (d.errors) {
+	if (this.onerror) {
+	    this.onerror.call(null, d.errors[0]);
+	} else {
+	    throw new Error(d.errors[0]);
+	}
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pushover-notifications.pushover.prototype.send" id="apidoc.element.pushover-notifications.pushover.prototype.send">
+        function <span class="apidocSignatureSpan">pushover-notifications.pushover.prototype.</span>send
+        <span class="apidocSignatureSpan">(obj, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (obj, fn) {
+    var self = this;
+    var o = url.parse(p_url);
+    var proxy;
+    o.method = &#x22;POST&#x22;;
+
+    obj = setDefaults(obj);
+
+    var req_string = {
+	token: self.token || obj.token,
+	user: self.user || obj.user
+    };
+
+    var p;
+    for (p in obj) {
+	req_string[ p ] = obj[p];
+    }
+
+    req_string = qs.stringify(req_string);
+
+    o.headers = {
+	&#x27;Content-Length&#x27;: req_string.length
+    };
+
+    var httpOpts = self.httpOptions || {};
+    if (httpOpts) {
+	Object.keys(httpOpts).forEach(function(key) {
+	    if (key !== &#x27;proxy&#x27;) {
+		o[key] = httpOpts[key];
+	    }
+	});
+    }
+
+    if (httpOpts.hasOwnProperty(&#x27;proxy&#x27;) &#x26;&#x26; httpOpts.proxy !== &#x22;&#x22;) {
+	proxy = url.parse(httpOpts.proxy);
+	o.headers.Host = o.host;
+	o.host = proxy.hostname;
+	o.port = proxy.port;
+	o.protocol = proxy.protocol;
+    }
+
+    var request;
+    if (httpOpts.proxy &#x26;&#x26; httpOpts.proxy !== &#x22;&#x22;) {
+	request = http.request;
+    } else {
+	request = https.request;
+    }
+
+    req = request(o, function(res) {
+	if (self.debug) {
+	    console.log(res.statusCode);
+	}
+	var err;
+	var data = &#x27;&#x27;;
+	res.on(&#x27;end&#x27;, function() {
+	    self.errors(data);
+	    if (fn) {
+		fn.call(null, err, data);
+	    }
+	});
+
+	res.on(&#x27;data&#x27;, function(chunk) {
+	    data += chunk;
+	});
+    });
+
+    req.on(&#x27;error&#x27;, function(err) {
+	if (fn) {
+	    fn.call(null, err);
+	}
+	// In the tests the &#x22;end&#x22; event did not get emitted if  &#x22;error&#x22; was emitted,
+	// but to be sure that the callback is not get called twice, null the callback function
+	fn = null;
+    });
+
+    if (self.debug) {
+	console.log (req_string.replace(self.token, &#x27;XXXXX&#x27;).replace(self.user, &#x27;XXXXX&#x27;));
+    }
+    req.write(req_string);
+    req.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	message: &#x27;omg node test&#x27;,	// required
+	title: &#x22;Well - this is fantastic&#x22;,
+	sound: &#x27;magic&#x27;,
+	device: &#x27;devicename&#x27;,
+	priority: 1
+};
+
+p.<span class="apidocCodeKeywordSpan">send</span>( msg, function( err, result ) {
+	if ( err ) {
+		throw err;
+	}
+
+	console.log( result );
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.pushover-notifications.pushover.prototype.updateSounds" id="apidoc.element.pushover-notifications.pushover.prototype.updateSounds">
+        function <span class="apidocSignatureSpan">pushover-notifications.pushover.prototype.</span>updateSounds
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateSounds = function () {
+    var self = this, data = &#x27;&#x27;;
+    var surl = &#x27;https://api.pushover.net/1/sounds.json?token=&#x27; + self.token;
+    var req = https.request(url.parse(surl) , function(res) {
+	res.on(&#x27;end&#x27;, function() {
+	    var j = JSON.parse(data);
+	    self.errors(data);
+	    self.sounds = j.sounds;
+	});
+
+	res.on(&#x27;data&#x27;, function(chunk) {
+	    data += chunk;
+	});
+
+    });
+
+    req.on(&#x27;error&#x27;, function(e) {
+	err = e;
+    });
+
+    req.write(&#x27;&#x27;);
+    req.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
